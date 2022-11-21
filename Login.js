@@ -39,11 +39,15 @@ export default function Login({ navigation , setUser, user, num }) {
   return (
     <View style={styles.container}>
       <TextInput
-        placeholder="username"
+        style={styles.input}
+        placeholder="Username"
+        placeholderTextColor="white"
         onChangeText={(text) => setUserNameInput(text)}
       />
       <TextInput
-        placeholder="password"
+        style={styles.input}
+        placeholder="Password"
+                placeholderTextColor="white"
         secureTextEntry={true}
         onChangeText={(text) => setPasswordInput(text)}
       />
@@ -58,5 +62,13 @@ const styles = StyleSheet.create({
     backgroundColor: "#252827",
     alignItems: "center",
     justifyContent: "center",
+  },
+  input: {
+    borderColor: "gray",
+    width: "75%",
+    borderWidth: 1,
+    borderRadius: 10,
+    padding: 10,
+    color: "white"
   },
 });

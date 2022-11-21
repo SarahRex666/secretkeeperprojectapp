@@ -29,18 +29,22 @@ export default function Signup({ navigation }) {
         username: userNameInput,
         password: passwordInput,
       }),
-    });
+    }).then(navigation.navigate("Home"))
   }
 
   return (
     <View style={styles.container}>
       <TextInput
+        style={styles.input}
       color="white"
-        placeholder="username"
+        placeholder="Username"
+        placeholderTextColor="white"
         onChangeText={(text) => setUserNameInput(text)}
       />
       <TextInput
-        placeholder="password"
+        style={styles.input}
+        placeholder="Password"
+                placeholderTextColor="white"
         secureTextEntry={true}
         onChangeText={(text) => setPasswordInput(text)}
       />
@@ -55,5 +59,13 @@ const styles = StyleSheet.create({
     backgroundColor: "#252827",
     alignItems: "center",
     justifyContent: "center",
+  },
+  input: {
+    borderColor: "gray",
+    width: "75%",
+    borderWidth: 1,
+    borderRadius: 10,
+    padding: 10,
+    color: "white"
   },
 });

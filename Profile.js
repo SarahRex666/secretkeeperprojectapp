@@ -14,9 +14,10 @@ export default function Profile({ route, navigation, user, setUser }) {
 
   if (user && user.id){
     return <View style={styles.container}>
-    <Text>{user.username}</Text>
+    <Text
+    style={styles.title}>{user.username}</Text>
     {
-    user.messages.map((message) => <Text key={message.id}>{message.message}</Text>)
+    user.messages.map((message) => <Text style={styles.text} key={message.id}>{message.message}</Text>)
     }
     <Button title="Message" onPress={() => navigation.navigate("Message")}/>
     <Button title="Sign Out" onPress={() => navigation.navigate("Logout")} />
@@ -33,4 +34,13 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
   },
+  text: {
+    color: "white",
+    paddingVertical: 5
+  },
+  title: {
+    fontSize: "20",
+    color: "white",
+    paddingVertical: 50
+  }
 });
