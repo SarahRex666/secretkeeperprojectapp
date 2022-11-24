@@ -10,8 +10,6 @@ export default function Profile({ route, navigation, user, setUser }) {
     }).then((res) => res.json()).then((resp) => setUser(resp));
   }, []);
 
-  console.log(user)
-
   if (user && user.id){
     return <View style={styles.container}>
     <Text
